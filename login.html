@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="styles.css"> <!-- Arquivo CSS para estilos -->
+    <link rel="stylesheet" href="login.css">
+</head>
+<body>
+    <div class="container">
+        <div class="image-section">
+            <img src="img/imagem.jpeg" alt="img"></div>
+        <h1>Seja Bem-vindo</h1>
+        <h2>Área Administrativa</h2>
+        <form id="loginForm">
+            <label for="adminEmail">E-mail:</label>
+            <input type="email" id="adminEmail" name="adminEmail" required>
+            
+            <label for="adminPassword">Senha:</label>
+            <input type="password" id="adminPassword" name="adminPassword" required>
+            
+            <button type="submit">Login</button>
+        </form>
+        <button onclick="redirectToAdminRegistration()">Cadastrar-se como administrador</button>
+        <button onclick="redirectToStudentRegistration()">Cadastrar-se como aluno/responsável</button>
+    </div>
+    
+    <script>
+        function redirectToAdminRegistration() {
+            // Redireciona para a página de cadastro de administrador
+            window.location.href = "cadastro_admin.html";
+        }
+
+        function redirectToStudentRegistration() {
+            // Redireciona para a página de cadastro de aluno/responsável
+            window.location.href = "cadastro_aluno.html";
+        }
+
+        document.addEventListener('DOMContentLoaded', function() {
+            // Adiciona um ouvinte de eventos para o formulário de login
+            document.getElementById('loginForm').addEventListener('submit', function(event) {
+                event.preventDefault(); // Impede o envio padrão do formulário
+                validateLoginForm();
+            });
+        });
+
+        function validateLoginForm() {
+            var adminEmail = document.getElementById("adminEmail").value;
+            var adminPassword = document.getElementById("adminPassword").value;
+
+            // Verifica se o campo de e-mail está vazio ou não é um e-mail válido
+            if (adminEmail === "" || !isValidEmail(adminEmail)) {
+                alert("Por favor, insira um e-mail válido.");
+                return false;
+            }
+
+            // Verifica se o campo de senha está vazio
+            if (adminPassword === "") {
+                alert("Por favor, insira sua senha.");
+                return false;
+            }
+
+            // Se todos os campos estiverem preenchidos e válidos, você pode continuar com o login
+            // Aqui você pode adicionar o código para enviar os dados para o servidor para autenticação
+
+            // Limpa o formulário após a validação
+            document.getElementById("loginForm").reset();
+
+            // Exibe uma mensagem de sucesso (opcional)
+            alert("Login realizado com sucesso!");
+
+            // Redireciona para a página do painel de administração após o login bem-sucedido
+            window.location.href = "admin_panel.html";
+
+            return true;
+        }
+
+        function isValidEmail(email) {
+            // Expressão regular para verificar se o e-mail é válido
+            var emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            return emailPattern.test(email);
+        }
+    </script> <!-- Script JavaScript embutido -->
+</body>
+</html>
