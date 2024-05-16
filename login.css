@@ -1,0 +1,46 @@
+.container {
+    display: auto;
+    max-width: 70%;
+    margin: auto auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    text-align: center;
+    background: rgba(160, 178, 225, 1);
+
+}
+input[type="email"],
+input[type="password"] {
+    width: 90%;
+    padding: 10px;
+    margin: 10px 0;
+    box-sizing: border-box;
+    background: rgba(81, 144, 190, 1);
+
+
+}
+
+button {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    background: rgba(239, 34, 34, 1);
+
+    color: #121212;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #798898;
+}
+img{
+width: 100%;
+
+
+
+gap: 0px;
+opacity: 0px;
+
+} 

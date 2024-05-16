@@ -1,0 +1,51 @@
+/* Estilos gerais */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 800px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #392d2d;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h1, h2 {
+    text-align: center;
+}
+
+/* Estilos específicos do painel de administração */
+.admin-panel {
+    text-align: center;
+}
+
+.admin-panel h1 {
+    margin-bottom: 20px;
+}
+
+.admin-panel p {
+    margin-bottom: 10px;
+}
+
+.admin-panel .options-panel {
+    display: inline-block;
+    padding: 10px 20px;
+    margin: 10px;
+    background-color: #1c9d20;
+    color: rgb(12, 8, 8);
+    border: none;
+    border-radius: 5px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.admin-panel .button:hover {
+    background-color: #45a049;
+}

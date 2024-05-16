@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro de Aluno/Responsável</title>
+    <link rel="stylesheet" href="styles.css"> <!-- Arquivo CSS para estilos -->
+    <link rel="stylesheet" href="cadastro_aluno.css">
+</head>
+<body>
+    <div class="container">
+        <h2>Cadastro de Aluno/Responsável</h2>
+        <div class="panel">
+            <form id="studentCreationForm">
+                <label for="laudo">Laudo:</label>
+                <input type="text" id="laudo" name="laudo" required>
+                <label for="matricula">Matrícula:</label>
+                <input type="text" id="matricula" name="matricula" required>
+                <label for="alunoNome">Nome do Aluno:</label>
+                <input type="text" id="alunoNome" name="alunoNome" required>
+                
+                <label for="responsavelNome">Nome do Responsável:  </label>
+                <input type="text" id="responsavelNome" name="responsavelNome" required>
+                <label for="curso">Curso:</label>
+                <input type="text" id="curso" name="curso" required>
+                <label for="responsavelNumero">Número do Responsável:</label>
+                <input type="text" id="responsavelNumero" name="responsavelNumero" required>
+                <label for="responsavelEmail">E-mail do Responsável:</label>
+                <input type="email" id="responsavelEmail" name="responsavelEmail" required>
+                <label for="bloco">   Bloco:</label><select id="bloco" name="bloco">
+                    <option value="A">A</option>
+                    <option value="B">B</option>
+                    <option value="C">C</option>
+                </select><label for="turno">Turno:</label><select id="turno" name="turno">
+                    <option value="Manhã">Manhã</option>
+                    <option value="Tarde">Tarde</option>
+                    <option value="Noite">Noite</option>
+                </select>
+                <button type="submit">Cadastrar</button>
+                <button onclick="redirectToLogin()">Logar</button>
+            </form>
+
+    
+
+    <script src="script.js"></script> <!-- Arquivo JavaScript -->
+</body>
+</html>

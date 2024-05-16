@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro de Administrador</title>
+    <link rel="stylesheet" href="styles.css"> <!-- Arquivo CSS para estilos -->
+    <link rel="stylesheet" href="cadastro_admin.css">
+</head>
+<body>
+    <div class="container">
+        <h2>Cadastro de Administrador</h2>
+        <div class="panel">
+            <form id="adminCreationForm">
+                <label for="adminName">Nome:</label>
+                <input type="text" id="adminName" name="adminName" required>
+                <label for="adminEmail">E-mail:</label>
+                <input type="email" id="adminEmail" name="adminEmail" required>
+                <label for="adminPassword">Senha:</label>
+                <input type="password" id="adminPassword" name="adminPassword" required>
+                <button type="submit">Cadastrar</button>
+            </form>
+        </div>
+        <button onclick="redirectToLogin()">Logar</button>
+    </div>
+
+    <script>
+        function redirectToLogin() {
+            // Redireciona para a página de login
+            window.location.href = "login.html"; // Altere para o nome do arquivo de login, se necessário
+        }
+
+        function validateAdminCreationForm() {
+            var adminName = document.getElementById("adminName").value;
+            var adminEmail = document.getElementById("adminEmail").value;
+            var adminPassword = document.getElementById("adminPassword").value;
+
+            if (adminName === "" || adminEmail === "" || adminPassword === "") {
+                alert("Por favor, preencha todos os campos.");
+                return false;
+            }
+
+            // Cria um objeto com os dados do administrador
+            var adminData = {
+                name: adminName,
+                email: adminEmail,
+                password: adminPassword
+            };
+
+            // Armazena os dados do administrador no localStorage
+            localStorage.setItem("adminData", JSON.stringify(adminData));
+
+            // Limpa o formulário após o armazenamento dos dados
+            document.getElementById("adminCreationForm").reset();
+
+            // Exibe uma mensagem de confirmação para o usuário
+            alert("Cadastro de administrador realizado com sucesso!");
+
+            // Redireciona para a página de login
+            redirectToLogin();
+
+            return true;
+        }
+
+        document.addEventListener('DOMContentLoaded', function() {
+            console.log('DOMContentLoaded evento disparado!');
+        
+            // Adiciona um ouvinte de eventos para o formulário de criação de administrador
+            document.getElementById('adminCreationForm').addEventListener('submit', function(event) {
+                event.preventDefault(); // Impede o envio padrão do formulário
+                validateAdminCreationForm();
+            });
+        });
+    </script> <!-- Script JavaScript embutido -->
+</body>
+</html>

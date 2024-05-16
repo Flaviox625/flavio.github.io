@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bloco Panel</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="bloco_panel.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Bloco Panel</h1>
+        <div class="blocks">
+            <button class="block-btn" onclick="showBlock('A')">Bloco A</button>
+            <button class="block-btn" onclick="showBlock('B')">Bloco B</button>
+            <button class="block-btn" onclick="showBlock('C')">Bloco C</button>
+        </div>
+        <div id="blockA" class="block">
+            <h2>Bloco A</h2>
+            <ul id="listA"></ul>
+        </div>
+        <div id="blockB" class="block">
+            <h2>Bloco B</h2>
+            <ul id="listB"></ul>
+        </div>
+        <div id="blockC" class="block">
+            <h2>Bloco C</h2>
+            <ul id="listC"></ul>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+    <script>
+        // Função para mostrar a lista de alunos de um bloco específico
+        function showBlock(block) {
+            // Oculta todas as listas de blocos
+            document.querySelectorAll('.block').forEach(function(el) {
+                el.style.display = 'none';
+            });
+
+            // Mostra a lista de alunos do bloco específico
+            document.getElementById('block' + block).style.display = 'block';
+
+            // Você precisará de uma lógica para preencher as listas de alunos aqui
+            // Isso pode ser feito recuperando dados do servidor ou do localStorage, dependendo da sua implementação
+        }
+    </script>
+</body>
+</html>

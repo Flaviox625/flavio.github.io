@@ -1,0 +1,51 @@
+.container {
+    max-width: 80%;
+    margin: 15% auto;
+    padding: 20px;
+    border: 2px solid #ccc;
+    border-radius: 5px;
+    text-align: center;
+    background: rgba(160, 178, 225, 1);
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    text-align: left;
+}
+
+input[type="text"],
+input[type="password"],
+input[type="email"] {
+    width: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+    background: rgb(79, 123, 155);
+    border: none;
+    border-radius: 5px;
+}
+
+button {
+    width: 100%;
+    padding: 10px;
+    margin-top: 10px; /* Adiciona um espaço entre os campos e o botão */
+    background: rgba(239, 34, 34, 1);
+    color: #121212;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #798898;
+}
+
+/* Adicionado regras de mídia para ajustar o layout em telas menores */
+@media screen and (max-width: 768px) {
+    .container {
+        max-width: 90%;
+    }
+}
